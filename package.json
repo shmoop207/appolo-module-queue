@@ -1,0 +1,40 @@
+{
+  "name": "@appolo/queue",
+  "version": "0.0.1",
+  "description": "appolo queue module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "appolo",
+    "queue"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "appolo": "^6.0.61",
+    "appolo-queue": "^7.0.1",
+    "bluebird": "^3.5.3",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@appolo/logger": "0.0.14",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/sinon-chai": "^3.2.2",
+    "@types/bluebird": "^3.5.26",
+    "@types/lodash": "^4.14.121",
+    "@types/node": "^11.10.4",
+    "typescript": "^3.3.3333",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "sinon-chai": "^3.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shmoop207/appolo-module-queue.git"
+  },
+  "author": {
+    "name": "roman svichar"
+  },
+  "license": "MIT"
+}
