@@ -1,6 +1,6 @@
 {
   "name": "@appolo/queue",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "appolo queue module",
   "publishConfig": {
     "access": "public"
@@ -11,13 +11,13 @@
   ],
   "main": "index.js",
   "dependencies": {
+    "@appolo/logger": "0.0.14",
     "appolo": "^6.0.61",
-    "appolo-queue": "^7.0.1",
+    "appolo-queue": "^7.0.2",
     "bluebird": "^3.5.3",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "@appolo/logger": "0.0.14",
     "@types/bluebird": "^3.5.26",
     "@types/chai": "^4.1.7",
     "@types/lodash": "^4.14.121",
