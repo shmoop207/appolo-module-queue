@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const appolo_1 = require("appolo");
-const Q = require("bluebird");
+const appolo_utils_1 = require("appolo-utils");
 const handler_1 = require("./src/handler");
 const index_1 = require("../index");
 const chai = require("chai");
@@ -22,7 +22,7 @@ describe("PubSub Spec", function () {
         let queue = app.injector.get("queue");
         await queue.create("test", { param1: "testParam" })
             .exec();
-        await Q.delay(1000);
+        await appolo_utils_1.Promises.delay(2000);
         app.injector.get(handler_1.Handler).working.should.be.eq("testParam");
         await app.reset();
     });

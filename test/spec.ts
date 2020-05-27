@@ -1,6 +1,6 @@
 import {App, createApp} from 'appolo'
 import {Queue} from 'appolo-queue'
-import * as Q from 'bluebird'
+import {Promises} from 'appolo-utils'
 import {Handler} from "./src/handler";
 import {QueueModule} from "../index";
 import chai = require('chai');
@@ -37,7 +37,7 @@ describe("PubSub Spec", function () {
         await queue.create("test", {param1: "testParam"})
             .exec();
 
-        await Q.delay(1000);
+        await Promises.delay(2000);
 
         app.injector.get<Handler>(Handler).working.should.be.eq("testParam");
 

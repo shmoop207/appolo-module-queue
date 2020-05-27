@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.handler = exports.MessageHandlerSymbol = void 0;
 require("reflect-metadata");
 const appolo_1 = require("appolo");
 exports.MessageHandlerSymbol = Symbol("MessageHandler");
