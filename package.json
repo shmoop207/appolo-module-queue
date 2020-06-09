@@ -1,6 +1,6 @@
 {
   "name": "@appolo/queue",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "appolo queue module",
   "publishConfig": {
     "access": "public"
@@ -11,9 +11,9 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "@appolo/logger": "7.0.1",
+    "@appolo/logger": "^7.0.1",
     "appolo": "^7.0.2",
-    "appolo-queue": "^7.1.1"
+    "appolo-queue": "^7.1.4"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
