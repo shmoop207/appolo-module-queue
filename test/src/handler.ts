@@ -1,4 +1,4 @@
-import {alias, define,singleton} from 'appolo'
+import {alias, define,singleton} from '@appolo/inject'
 import {Job} from "appolo-queue";
 import {handler} from "../../src/decorators";
 

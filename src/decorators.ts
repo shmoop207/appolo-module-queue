@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import {Util} from 'appolo';
+import {Reflector} from '@appolo/utils';
 
 export const MessageHandlerSymbol = Symbol("MessageHandler");
 
@@ -15,7 +15,7 @@ export interface HandlerMetadata {
 export function handler(eventName: string) {
     return function (target: any, propertyKey: string, descriptor?: PropertyDescriptor) {
 
-        let data = Util.getReflectData<HandlerMetadata>(MessageHandlerSymbol, target.constructor, {});
+        let data = Reflector.getFnMetadata<HandlerMetadata>(MessageHandlerSymbol, target.constructor, {});
 
         if (!data[propertyKey]) {
             data[propertyKey] = {

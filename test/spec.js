@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const appolo_1 = require("appolo");
-const appolo_utils_1 = require("appolo-utils");
+const engine_1 = require("@appolo/engine");
+const utils_1 = require("@appolo/utils");
 const handler_1 = require("./src/handler");
 const index_1 = require("../index");
 const chai = require("chai");
@@ -14,15 +14,15 @@ describe("PubSub Spec", function () {
         throw new Error(`please define process.env.REDIS`);
     }
     beforeEach(async () => {
-        app = appolo_1.createApp({ root: __dirname, environment: "production", port: 8181 });
-        await app.module(new index_1.QueueModule({ config: { queueName: "queue-module-test", redis: process.env.REDIS } }));
+        app = engine_1.createApp({ root: __dirname, environment: "production" });
+        await app.module.use(index_1.QueueModule.for({ config: { queueName: "queue-module-test", redis: process.env.REDIS } }));
         await app.launch();
     });
     it("should publish events", async () => {
         let queue = app.injector.get("queue");
         await queue.create("test", { param1: "testParam" })
             .exec();
-        await appolo_utils_1.Promises.delay(2000);
+        await utils_1.Promises.delay(2000);
         app.injector.get(handler_1.Handler).working.should.be.eq("testParam");
         await app.reset();
     });

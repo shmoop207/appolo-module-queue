@@ -1,5 +1,5 @@
 "use strict";
-import {define, factory, IFactory, inject, singleton} from 'appolo';
+import {define, factory, IFactory, inject, singleton} from '@appolo/inject';
 import {ILogger} from "@appolo/logger";
 import {IOptions} from "../index";
 import {Queue} from 'appolo-queue';

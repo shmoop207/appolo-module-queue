@@ -1,5 +1,5 @@
 "use strict";
-import {IModuleOptions, module, Module} from 'appolo';
+import {IModuleParams, module, Module} from '@appolo/engine';
 import {QueueClient} from "./src/queueClient";
 import {handler} from "./src/decorators";
 
@@ -8,7 +8,7 @@ import {Events, IHandlerOptions, IJobOptions, IOptions as IQueueOptions, Job, Qu
 
 export {Job, Queue, handler, Events, IHandlerOptions, IJobOptions, IQueueOptions}
 
-export interface IOptions extends IModuleOptions {
+export interface IOptions {
     id?: string,
     config?: IQueueOptions
 }
@@ -17,8 +17,8 @@ export interface IOptions extends IModuleOptions {
 @module()
 export class QueueModule extends Module<IOptions> {
 
-    constructor(options: IOptions) {
-        super(options)
+    public static for(options: IOptions): IModuleParams {
+        return {type: QueueModule, options}
     }
 
     protected readonly Defaults: Partial<IOptions> = {

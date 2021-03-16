@@ -1,8 +1,9 @@
 "use strict";
-import {define, Define, IApp, initMethod, inject, Injector, singleton,Util} from 'appolo'
-import * as _ from "lodash";
+import {define, Define, init, inject, Injector, singleton} from '@appolo/inject'
+import {IApp} from '@appolo/engine'
 import {HandlerMetadata, MessageHandlerSymbol,} from "./decorators";
 import {ILogger} from '@appolo/logger';
+import {Reflector,Arrays} from '@appolo/utils';
 import {IOptions} from "../index";
 import {Job, Queue} from "appolo-queue";
 
@@ -18,24 +19,24 @@ export class HandlersManager {
 
     private _handlers = new Map<string, { define: Define, propertyKey: string }[]>();
 
-    @initMethod()
+    @init()
     public async initialize() {
 
-        _.forEach(this.app.parent.exported, (item => this._createHandler(item.fn, item.define)));
+        this.app.tree.parent.discovery.exported.forEach(item => this._createHandler(item.fn, item.define));
     }
 
     private _createHandler(fn: Function, define: Define) {
 
-        let handlers = Util.getReflectData<HandlerMetadata>(MessageHandlerSymbol, fn);
+        let handlers = Reflector.getFnMetadata<HandlerMetadata>(MessageHandlerSymbol, fn);
 
         if (!handlers) {
             return;
         }
 
-        _.forEach(handlers, handler => {
+        Arrays.forEach(handlers, handler => {
 
             this.queueClient.handle(handler.eventName, async (job: Job) => {
-                return this.app.parent.injector.get(define.definition.id)[handler.propertyKey](job)
+                return this.app.tree.parent.injector.get(define.definition.id)[handler.propertyKey](job)
             });
 
 

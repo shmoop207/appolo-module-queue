@@ -1,6 +1,6 @@
-import {App, createApp} from 'appolo'
+import {App, createApp} from '@appolo/engine'
 import {Queue} from 'appolo-queue'
-import {Promises} from 'appolo-utils'
+import {Promises} from '@appolo/utils'
 import {Handler} from "./src/handler";
 import {QueueModule} from "../index";
 import chai = require('chai');
@@ -21,9 +21,9 @@ describe("PubSub Spec", function () {
 
     beforeEach(async () => {
 
-        app = createApp({root: __dirname, environment: "production", port: 8181});
+        app = createApp({root: __dirname, environment: "production"});
 
-        await app.module(new QueueModule({config: {queueName:"queue-module-test",redis: process.env.REDIS}}));
+        await app.module.use(QueueModule.for({config: {queueName:"queue-module-test",redis: process.env.REDIS}}));
 
         await app.launch();
 

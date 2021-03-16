@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handler = exports.MessageHandlerSymbol = void 0;
 require("reflect-metadata");
-const appolo_1 = require("appolo");
+const utils_1 = require("@appolo/utils");
 exports.MessageHandlerSymbol = Symbol("MessageHandler");
 function handler(eventName) {
     return function (target, propertyKey, descriptor) {
-        let data = appolo_1.Util.getReflectData(exports.MessageHandlerSymbol, target.constructor, {});
+        let data = utils_1.Reflector.getFnMetadata(exports.MessageHandlerSymbol, target.constructor, {});
         if (!data[propertyKey]) {
             data[propertyKey] = {
                 eventName: eventName,
