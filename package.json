@@ -1,6 +1,6 @@
 {
   "name": "@appolo/queue",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "appolo queue module",
   "publishConfig": {
     "access": "public"
@@ -13,7 +13,7 @@
   "dependencies": {
     "@appolo/logger": "^8.0.5",
     "@appolo/engine": "^8.0.23",
-    "appolo-queue": "^8.0.0"
+    "appolo-queue": "^8.0.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.15",
@@ -22,7 +22,8 @@
     "@types/sinon-chai": "^3.2.5",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
-    "sinon-chai": "^3.5.0",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0",
     "typescript": "^4.2.3"
   },
   "repository": {
