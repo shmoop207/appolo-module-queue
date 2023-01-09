@@ -26,7 +26,7 @@ let QueueModule = QueueModule_1 = class QueueModule extends engine_1.Module {
     }
 };
 QueueModule = QueueModule_1 = tslib_1.__decorate([
-    engine_1.module()
+    (0, engine_1.module)()
 ], QueueModule);
 exports.QueueModule = QueueModule;
 //# sourceMappingURL=index.js.map

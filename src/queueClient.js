@@ -18,15 +18,15 @@ let QueueClient = class QueueClient {
     }
 };
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], QueueClient.prototype, "logger", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], QueueClient.prototype, "moduleOptions", void 0);
 QueueClient = tslib_1.__decorate([
-    inject_1.define(),
-    inject_1.singleton(),
-    inject_1.factory()
+    (0, inject_1.define)(),
+    (0, inject_1.singleton)(),
+    (0, inject_1.factory)()
 ], QueueClient);
 exports.QueueClient = QueueClient;
 //# sourceMappingURL=queueClient.js.map

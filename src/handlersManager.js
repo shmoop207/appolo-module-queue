@@ -25,26 +25,26 @@ let HandlersManager = class HandlersManager {
     }
 };
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], HandlersManager.prototype, "moduleOptions", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], HandlersManager.prototype, "injector", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], HandlersManager.prototype, "app", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], HandlersManager.prototype, "logger", void 0);
 tslib_1.__decorate([
-    inject_1.inject()
+    (0, inject_1.inject)()
 ], HandlersManager.prototype, "queueClient", void 0);
 tslib_1.__decorate([
-    inject_1.init()
+    (0, inject_1.init)()
 ], HandlersManager.prototype, "initialize", null);
 HandlersManager = tslib_1.__decorate([
-    inject_1.define(),
-    inject_1.singleton()
+    (0, inject_1.define)(),
+    (0, inject_1.singleton)()
 ], HandlersManager);
 exports.HandlersManager = HandlersManager;
 //# sourceMappingURL=handlersManager.js.map

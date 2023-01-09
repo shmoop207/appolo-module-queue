@@ -14,7 +14,7 @@ describe("PubSub Spec", function () {
         throw new Error(`please define process.env.REDIS`);
     }
     beforeEach(async () => {
-        app = engine_1.createApp({ root: __dirname, environment: "production" });
+        app = (0, engine_1.createApp)({ root: __dirname, environment: "production" });
         await app.module.use(index_1.QueueModule.for({ config: { queueName: "queue-module-test", redis: process.env.REDIS } }));
         await app.launch();
     });
